@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 const Schema = new mongoose.Schema;
 const locationSchema = Schema(
   {
-    village: {
+    taluka: {
       type: String,
       trim: true,
     },

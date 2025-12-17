@@ -35,16 +35,17 @@ const doctorProfileSchema = new mongoose.Schema(
       trim: true,
     },
 
-    hospitalName: {
+    workinghospitalName: {
       type: String,
       trim: true,
+      
     },
 
-    consultationModes: {
-      type: [String],
-      enum: ["CHAT", "AUDIO", "VIDEO"],
-      default: ["CHAT"],
-    },
+    // consultationModes: {
+    //   type: [String],
+    //   enum: ["CHAT", "AUDIO", "VIDEO"],
+    //   default: ["CHAT"],
+    // },
 
     availabilityStatus: {
       type: String,

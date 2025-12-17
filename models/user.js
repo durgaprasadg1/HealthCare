@@ -20,6 +20,7 @@ const userSchema = Schema(
       lowercase: true,
       trim: true,
       sparse: true, 
+      unique : true,
     },
 
     password: {
@@ -27,16 +28,16 @@ const userSchema = Schema(
       select: false, 
     },
 
-    authProvider: {
-      type: String,
-      enum: ["LOCAL", "GOOGLE", "OTP"],
-      default: "LOCAL",
-    },
+    // authProvider: {
+    //   type: String,
+    //   enum: ["LOCAL", "GOOGLE", "OTP"],
+    //   default: "LOCAL",
+    // },
 
-    languagePreference: {
-      type: String,
-      default: "en",
-    },
+    // languagePreference: {
+    //   type: String,
+    //   default: "en",
+    // },
 
     location:{
         type : Schema.Type.ObjectId,
@@ -47,6 +48,7 @@ const userSchema = Schema(
       type: Boolean,
       default: false,
     },
+    
   },
   {
     timestamps: true, 
