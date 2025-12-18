@@ -41,12 +41,6 @@ const doctorProfileSchema = new mongoose.Schema(
       
     },
 
-    // consultationModes: {
-    //   type: [String],
-    //   enum: ["CHAT", "AUDIO", "VIDEO"],
-    //   default: ["CHAT"],
-    // },
-
     availabilityStatus: {
       type: String,
       enum: ["ONLINE", "OFFLINE"],
