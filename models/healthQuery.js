@@ -2,26 +2,21 @@ import mongoose from "mongoose";
 
 const healthQuerySchema = new mongoose.Schema(
   {
-    userId: {
+    patientId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+      ref: "Citizen",
       required: true,
     },
-
-    
-
+    assignedDoctorId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Doctor",
+    },
+    symptoms: [{
+      type: String,
+    }],
     description: {
       type: String,
       required: true,
-    },
-
-    symptoms: {
-      type: [String],
-    },
-
-    category: {
-      type: String,
-      trim: true,
     },
 
     urgencyLevel: {
@@ -30,16 +25,6 @@ const healthQuerySchema = new mongoose.Schema(
       default: "LOW",
     },
 
-    status: {
-      type: String,
-      enum: ["OPEN", "ASSIGNED", "CLOSED"],
-      default: "OPEN",
-    },
-
-    assignedDoctorId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Doctor",
-    },
   },
   { timestamps: true }
 );
